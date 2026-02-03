@@ -53,11 +53,11 @@ or a **D-shaped connector with one corner cut**
 
 ## 4. DisplayPort Versions (Simple Overview)
 
-| Version      | Max Capability (Typical)                  |
-| ------------ | ----------------------------------------- |
-| DP 1.2       | 4K @ 60Hz                                 |
-| DP 1.4       | 4K @ 120Hz / 8K @ 60Hz (with compression) |
-| DP 2.0 / 2.1 | 8K+ high refresh (very high bandwidth)    |
+| Version      | Max Capability (Typical)                      |
+| ------------ | --------------------------------------------- |
+| DP 1.2       | 4K @ 60Hz                                     |
+| **DP 1.4**   | **4K @ 120Hz / 8K @ 60Hz (with compression)** |
+| DP 2.0 / 2.1 | 8K+ high refresh (very high bandwidth)        |
 
 👉 Most people today use **DP 1.4**, and that’s totally fine.
 

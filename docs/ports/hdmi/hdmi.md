@@ -58,11 +58,11 @@ HDMI replaced most older connectors because it’s **simple and universal**.
 
 HDMI versions affect **maximum resolution & refresh rate**.
 
-| HDMI Version | Typical Max     |
-| ------------ | --------------- |
-| HDMI 1.4     | 4K @ 30Hz       |
-| HDMI 2.0     | 4K @ 60Hz       |
-| HDMI 2.1     | 4K @ 120Hz / 8K |
+| HDMI Version | Typical Max         |
+| ------------ | ------------------- |
+| HDMI 1.4     | 4K @ 30Hz           |
+| **HDMI 2.0** | **4K @ 60Hz**       |
+| HDMI 2.1     | 4K @ **120Hz / 8K** |
 
 👉 Most TVs today support **HDMI 2.0 or 2.1**.
 
