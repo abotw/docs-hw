@@ -1,0 +1,1925 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://abotw.github.io/docs-hw/ports/thunderbolt/">
+      
+      
+        <link rel="prev" href="../dp/">
+      
+      
+        <link rel="next" href="../usb/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Thunderbolt - HW Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-what-is-thunderbolt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HW Docs" class="md-header__button md-logo" aria-label="HW Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18V4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v-2H3zm10 6H9v1.78c-.61.55-1 1.33-1 2.22s.39 1.67 1 2.22V20h4v-1.78c.61-.55 1-1.34 1-2.22s-.39-1.67-1-2.22zm-2 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M22 8h-6c-.5 0-1 .5-1 1v10c0 .5.5 1 1 1h6c.5 0 1-.5 1-1V9c0-.5-.5-1-1-1m-1 10h-4v-8h4z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HW Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thunderbolt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-hw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HW Docs" class="md-nav__button md-logo" aria-label="HW Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18V4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v-2H3zm10 6H9v1.78c-.61.55-1 1.33-1 2.22s.39 1.67 1 2.22V20h4v-1.78c.61-.55 1-1.34 1-2.22s-.39-1.67-1-2.22zm-2 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M22 8h-6c-.5 0-1 .5-1 1v10c0 .5.5 1 1 1h6c.5 0 1-.5 1-1V9c0-.5-.5-1-1-1m-1 10h-4v-8h4z"/></svg>
+
+    </a>
+    HW Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-hw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18V4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v-2H3zm10 6H9v1.78c-.61.55-1 1.33-1 2.22s.39 1.67 1 2.22V20h4v-1.78c.61-.55 1-1.34 1-2.22s-.39-1.67-1-2.22zm-2 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M22 8h-6c-.5 0-1 .5-1 1v10c0 .5.5 1 1 1h6c.5 0 1-.5 1-1V9c0-.5-.5-1-1-1m-1 10h-4v-8h4z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bilibili-hw-upers/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373.375.374.4.96v1.173q-.025.586-.4.96-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947.387-.386.947-.386m8 0q.56 0 .933.373.375.374.4.96v1.173q-.025.586-.4.96-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96.373-.373.933-.373"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilibili UPers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bluetooth/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C6.76 0 3.148 2.49 3.148 12S6.76 24 12 24s8.852-2.49 8.852-12S17.24 0 12 0m-.777 1.682 6.214 6.215L13.335 12l4.104 4.104-6.215 6.214v-8.193l-3.418 3.42-1.243-1.244L10.853 12l-4.29-4.3 1.243-1.245 3.418 3.42zm1.748 4.244v3.969l1.984-1.985zm0 8.181v3.967l1.984-1.984z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cables/ether-cables/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 3v4h2V3zM8 4v7h8V4h-2v4h-4V4zm2 8v10h4V12z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet Cables
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Display
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/benq-pd2705u/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BenQ PD2705U
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ereaders
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ereaders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ereaders/ereaders/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Ereaders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ereaders/kobo-clare-2e-setup/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 13.192h.874v3.115l1.21-1.432h1.047l-1.385 1.619 1.51 2.125H2.21L.889 16.732H.874v1.887H0zm3.177 3.555c0-1.227.575-1.957 1.653-1.957 1.077 0 1.655.73 1.655 1.957s-.575 1.957-1.651 1.957-1.652-.731-1.652-1.957zm1.653 1.341c.627 0 .722-.643.722-1.344 0-.7-.095-1.343-.722-1.343-.628 0-.722.646-.722 1.346s.091 1.341.722 1.341m2.999-2.764h.016a1.09 1.09 0 0 1 .967-.535c.898 0 1.29.763 1.29 1.957 0 1.045-.362 1.957-1.581 1.957-.978 0-1.564-.559-1.564-1.678v-3.83h.872zm.699 2.767c.56 0 .653-.73.653-1.344 0-.676-.07-1.398-.653-1.398-.527 0-.699.771-.699 1.398 0 .935.14 1.344.699 1.344m2.011-1.344c0-1.227.573-1.957 1.65-1.957 1.078 0 1.653.731 1.653 1.957s-.575 1.957-1.653 1.957c-1.077 0-1.65-.73-1.65-1.957m1.655 1.341c.629 0 .724-.643.724-1.344 0-.7-.095-1.343-.724-1.343s-.723.643-.723 1.343c0 .701.094 1.344.723 1.344m7.126-6.807L5.956 12.439 4.8 11.281zM6.141 6.604h.903v3.935h-.903v-.17c-.245.174-.538.27-.839.272-1.018 0-1.791-.928-1.791-2.067s.773-2.068 1.791-2.068c.301.003.594.098.839.273zm-.839 3.088c.502 0 .857-.493.857-1.118s-.355-1.118-.857-1.118-.868.494-.868 1.118c0 .623.366 1.118.868 1.118m8.006-3.088h.894v3.935h-.894v-.14a1.37 1.37 0 0 1-.759.242c-.951 0-1.599-.773-1.599-1.723V6.604h.893v2.314c0 .434.297.801.732.801s.733-.367.733-.801zm8.332 3.935h-.897V6.61h.897v.14c.224-.155.489-.239.761-.244.95 0 1.599.773 1.599 1.723v2.31h-.893v-2.31c0-.434-.298-.8-.733-.8-.434 0-.734.366-.734.8zm-20.705 0H.013V5.627H1.55c.927.006 1.686.77 1.686 1.697 0 .546-.264 1.06-.707 1.378l1.384 1.837H2.741L1.592 9.017H.935zm0-3.982v1.525h.642a.767.767 0 0 0 .764-.763.77.77 0 0 0-.764-.763l-.032.001zm15.679 3.054v.003l.588.785a1.8 1.8 0 0 1-.875.245 1.353 1.353 0 0 1-1.331-1.346l.002-.059v-1.7h-.473v-.935h.473v-.978h.894v.978h.768v.935h-.765v1.686l-.002.043c0 .234.187.43.422.441a.54.54 0 0 0 .299-.098m-7.352-1.16 1.78 2.092H9.789L8.47 8.925v1.618h-.922V5.296h.922v2.68l1.073-1.372h1.253zm9.416-1.947c1.014 0 1.934.931 1.713 2.345h-2.577c.118.9 1.137 1.358 1.748.457l.79.456c-.508.72-1.113.882-1.584.882-.935 0-1.866-.85-1.866-2.07 0-1.16.742-2.07 1.776-2.07m.782 1.561c-.175-.979-1.423-.923-1.612 0z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo Clare 2E Setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ereaders/kobo-clare-2e/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 13.192h.874v3.115l1.21-1.432h1.047l-1.385 1.619 1.51 2.125H2.21L.889 16.732H.874v1.887H0zm3.177 3.555c0-1.227.575-1.957 1.653-1.957 1.077 0 1.655.73 1.655 1.957s-.575 1.957-1.651 1.957-1.652-.731-1.652-1.957zm1.653 1.341c.627 0 .722-.643.722-1.344 0-.7-.095-1.343-.722-1.343-.628 0-.722.646-.722 1.346s.091 1.341.722 1.341m2.999-2.764h.016a1.09 1.09 0 0 1 .967-.535c.898 0 1.29.763 1.29 1.957 0 1.045-.362 1.957-1.581 1.957-.978 0-1.564-.559-1.564-1.678v-3.83h.872zm.699 2.767c.56 0 .653-.73.653-1.344 0-.676-.07-1.398-.653-1.398-.527 0-.699.771-.699 1.398 0 .935.14 1.344.699 1.344m2.011-1.344c0-1.227.573-1.957 1.65-1.957 1.078 0 1.653.731 1.653 1.957s-.575 1.957-1.653 1.957c-1.077 0-1.65-.73-1.65-1.957m1.655 1.341c.629 0 .724-.643.724-1.344 0-.7-.095-1.343-.724-1.343s-.723.643-.723 1.343c0 .701.094 1.344.723 1.344m7.126-6.807L5.956 12.439 4.8 11.281zM6.141 6.604h.903v3.935h-.903v-.17c-.245.174-.538.27-.839.272-1.018 0-1.791-.928-1.791-2.067s.773-2.068 1.791-2.068c.301.003.594.098.839.273zm-.839 3.088c.502 0 .857-.493.857-1.118s-.355-1.118-.857-1.118-.868.494-.868 1.118c0 .623.366 1.118.868 1.118m8.006-3.088h.894v3.935h-.894v-.14a1.37 1.37 0 0 1-.759.242c-.951 0-1.599-.773-1.599-1.723V6.604h.893v2.314c0 .434.297.801.732.801s.733-.367.733-.801zm8.332 3.935h-.897V6.61h.897v.14c.224-.155.489-.239.761-.244.95 0 1.599.773 1.599 1.723v2.31h-.893v-2.31c0-.434-.298-.8-.733-.8-.434 0-.734.366-.734.8zm-20.705 0H.013V5.627H1.55c.927.006 1.686.77 1.686 1.697 0 .546-.264 1.06-.707 1.378l1.384 1.837H2.741L1.592 9.017H.935zm0-3.982v1.525h.642a.767.767 0 0 0 .764-.763.77.77 0 0 0-.764-.763l-.032.001zm15.679 3.054v.003l.588.785a1.8 1.8 0 0 1-.875.245 1.353 1.353 0 0 1-1.331-1.346l.002-.059v-1.7h-.473v-.935h.473v-.978h.894v.978h.768v.935h-.765v1.686l-.002.043c0 .234.187.43.422.441a.54.54 0 0 0 .299-.098m-7.352-1.16 1.78 2.092H9.789L8.47 8.925v1.618h-.922V5.296h.922v2.68l1.073-1.372h1.253zm9.416-1.947c1.014 0 1.934.931 1.713 2.345h-2.577c.118.9 1.137 1.358 1.748.457l.79.456c-.508.72-1.113.882-1.584.882-.935 0-1.866-.85-1.866-2.07 0-1.16.742-2.07 1.776-2.07m.782 1.561c-.175-.979-1.423-.923-1.612 0z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo Clare 2E
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DisplayPort
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 12h12c.55 0 1 .45 1 1s-.45 1-1 1H6c-.55 0-1-.45-1-1s.45-1 1-1m0-2c-1.66 0-3 1.34-3 3s1.34 3 3 3h12c1.66 0 3-1.34 3-3s-1.34-3-3-3zm0-2h12c2.76 0 5 2.24 5 5s-2.24 5-5 5H6c-2.76 0-5-2.24-5-5s2.24-5 5-5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Thunderbolt
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 12h12c.55 0 1 .45 1 1s-.45 1-1 1H6c-.55 0-1-.45-1-1s.45-1 1-1m0-2c-1.66 0-3 1.34-3 3s1.34 3 3 3h12c1.66 0 3-1.34 3-3s-1.34-3-3-3zm0-2h12c2.76 0 5 2.24 5 5s-2.24 5-5 5H6c-2.76 0-5-2.24-5-5s2.24-5 5-5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Thunderbolt
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is Thunderbolt?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-does-thunderbolt-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why Does Thunderbolt Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-thunderbolt-vs-usb-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Thunderbolt vs USB (Big Picture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-thunderbolt-uses-usb-c-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Thunderbolt Uses USB-C Connector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Thunderbolt Uses USB-C Connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-thunderbolt-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Thunderbolt Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-runs-inside-a-thunderbolt-cable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. What Runs Inside a Thunderbolt Cable?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-daisy-chaining-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Daisy-Chaining Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-thunderbolt-and-displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Thunderbolt and Displays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-thunderbolt-power-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Thunderbolt Power Delivery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-thunderbolt-vs-usb4-common-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Thunderbolt vs USB4 (Common Confusion)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Thunderbolt vs USB4 (Common Confusion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key differences:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-when-do-you-actually-need-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. When Do You Actually Need Thunderbolt?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-how-to-check-if-your-computer-supports-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. How to Check If Your Computer Supports Thunderbolt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-safety-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Safety and Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usb/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 7v4h1v2h-3V5h2l-3-4-3 4h2v8H8v-2.07c.7-.37 1.2-1.08 1.2-1.93A2.2 2.2 0 0 0 7 6.8c-1.22 0-2.2.98-2.2 2.2 0 .85.5 1.56 1.2 1.93V13a2 2 0 0 0 2 2h3v3.05c-.71.36-1.2 1.1-1.2 1.95a2.2 2.2 0 0 0 2.2 2.2 2.2 2.2 0 0 0 2.2-2.2c0-.85-.49-1.59-1.2-1.95V15h3a2 2 0 0 0 2-2v-2h1V7z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    USB
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hdmi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hdmi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hdmi/hdmi/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7H3c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h1l1.4 1.4c.4.4.9.6 1.4.6h10.3c.5 0 1-.2 1.4-.6L20 16h1c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2M3 14V9h18v5h-1.8l-2 2H6.8l-2-2zm16-3H5v2h14z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    HDMI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Printers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Printers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../printers/hp-smart-tank-672/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HP Smart Tank 672
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../printers/printers/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Printers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Routers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../routers/glinet/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.242 8.576a3.5 3.5 0 0 0-1.752.469l-.076.047c-.068.038-.08.132-.025.183l.248.248c.038.039.098.048.14.018a2.9 2.9 0 0 1 1.46-.393c.512 0 1.016.137 1.46.393h.004a.12.12 0 0 0 .14-.018l.253-.248a.115.115 0 0 0-.026-.183l-.08-.047a3.5 3.5 0 0 0-1.746-.469m-.006 1.012c-.375 0-.747.094-1.076.273a.12.12 0 0 0-.055.084c0 .026.009.057.026.074l.273.274a.12.12 0 0 0 .133.025 1.6 1.6 0 0 1 .695-.154c.244 0 .484.056.701.154a.115.115 0 0 0 .131-.025l.266-.266a.11.11 0 0 0 .03-.082v-.008c.004-.025-.014-.055-.044-.072a2.26 2.26 0 0 0-1.08-.277m.01 1.123a.43.43 0 0 0-.44.44c0 .247.183.435.426.435a.46.46 0 0 0 .334-.133.41.41 0 0 0 .116-.303.43.43 0 0 0-.436-.44m-9.77.346c-1.472 0-2.472.884-2.476 2.199 0 .64.235 1.22.644 1.588.427.38.988.562 1.71.562.572 0 1.06-.122 1.372-.224l.057-.018a.04.04 0 0 0 .03-.039v-2.07c.008-.03-.008-.047-.034-.047H2.178a.04.04 0 0 0-.043.043v.576a.04.04 0 0 0 .043.043h.836v.99a2.3 2.3 0 0 1-.62.068c-.952 0-1.544-.575-1.544-1.498 0-.922.618-1.496 1.613-1.496.452 0 .722.088.91.164l.09.038a.04.04 0 0 0 .033 0c.013-.005.017-.013.022-.026l.183-.576c.009-.021-.004-.042-.021-.05l-.069-.032c-.213-.094-.622-.195-1.134-.195m2.895.039c-.026 0-.043.015-.043.04v4.182c0 .026.017.041.043.041H7.96q.041-.001.043-.04v-.598c0-.017-.017-.04-.043-.04h-1.81v-3.544c0-.026-.018-.041-.044-.041zm8.51.004a.04.04 0 0 0-.043.043v4.18a.04.04 0 0 0 .043.042h.7a.04.04 0 0 0 .042-.043v-1.799c0-.448-.003-.81-.016-1.148.154.265.34.56.567.893l1.4 2.08a.04.04 0 0 0 .035.017h.7a.04.04 0 0 0 .043-.043v-4.18a.04.04 0 0 0-.043-.042h-.7a.04.04 0 0 0-.043.043v1.761q-.002.514.022 1.098-.224-.39-.512-.81l-1.414-2.077c-.008-.013-.02-.015-.033-.015zm9.248.277-.727.18a.05.05 0 0 0-.033.043v.63h-.44a.04.04 0 0 0-.042.043v.559a.04.04 0 0 0 .043.043h.443v1.451c0 .401.081.672.252.834.162.17.406.26.709.26.218 0 .414-.029.55-.08l.055-.022c.017-.008.032-.026.028-.043l-.035-.55c0-.013-.01-.027-.018-.032-.008-.008-.02-.007-.033-.007l-.104.025c-.055.013-.154.03-.295.03-.149 0-.293-.035-.293-.44v-1.434h.768a.04.04 0 0 0 .043-.043v-.558a.05.05 0 0 0-.047-.036h-.77v-.81c0-.013-.002-.027-.015-.035-.008-.009-.026-.012-.04-.008m-3.229.789c-.935 0-1.588.691-1.588 1.678 0 .96.655 1.58 1.663 1.58.525 0 .883-.102 1.087-.188l.065-.025c.021-.009.03-.03.025-.05l-.136-.536a.04.04 0 0 0-.022-.025q-.02-.008-.033 0l-.096.039c-.183.072-.409.14-.81.14-.257 0-.855-.077-.932-.756h2.127a.044.044 0 0 0 .043-.037l.014-.095a1.6 1.6 0 0 0 .015-.235c-.004-.691-.376-1.49-1.422-1.49m-8.025.064a.04.04 0 0 0-.043.043v3.05a.04.04 0 0 0 .043.042h.738a.04.04 0 0 0 .043-.043v-3.049a.04.04 0 0 0-.043-.043zm7.982.555c.188 0 .343.052.45.154.14.133.188.325.2.453h-1.362c.05-.192.222-.607.713-.607zm-10.199.025a.453.453 0 0 0-.453.454.453.453 0 0 0 .453.453.453.453 0 0 0 .453-.453.453.453 0 0 0-.453-.453"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    GL.iNet
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../routers/routers/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m1-7v3h2l-3 3-3-3h2v-3m-6 0h3v2l3-3-3-3v2H5m6 0V8H9l3-3 3 3h-2v3m6 0h-3V9l-3 3 3 3v-2h3"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Routers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is Thunderbolt?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-does-thunderbolt-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why Does Thunderbolt Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-thunderbolt-vs-usb-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Thunderbolt vs USB (Big Picture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-thunderbolt-uses-usb-c-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Thunderbolt Uses USB-C Connector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Thunderbolt Uses USB-C Connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-thunderbolt-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Thunderbolt Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-runs-inside-a-thunderbolt-cable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. What Runs Inside a Thunderbolt Cable?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-daisy-chaining-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Daisy-Chaining Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-thunderbolt-and-displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Thunderbolt and Displays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-thunderbolt-power-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Thunderbolt Power Delivery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-thunderbolt-vs-usb4-common-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Thunderbolt vs USB4 (Common Confusion)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Thunderbolt vs USB4 (Common Confusion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key differences:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-when-do-you-actually-need-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. When Do You Actually Need Thunderbolt?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-how-to-check-if-your-computer-supports-thunderbolt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. How to Check If Your Computer Supports Thunderbolt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-safety-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Safety and Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Thunderbolt</h1>
+
+<h2 id="1-what-is-thunderbolt">1. What Is Thunderbolt?</h2>
+<p><strong>Thunderbolt</strong> is a <strong>high-speed hardware interface</strong> developed by <strong>Intel</strong> (in collaboration with Apple).</p>
+<p>In simple terms, Thunderbolt is:</p>
+<blockquote>
+<p><strong>One cable that can carry data, video, and power at very high speed</strong></p>
+</blockquote>
+<p>It is commonly used for:</p>
+<ul>
+<li>External SSDs</li>
+<li>High-resolution monitors</li>
+<li>Docking stations</li>
+<li>eGPUs</li>
+<li>Professional audio/video equipment</li>
+</ul>
+<h2 id="2-why-does-thunderbolt-exist">2. Why Does Thunderbolt Exist?</h2>
+<p>USB is great for everyday devices, but it has limits.</p>
+<p>Thunderbolt was designed to solve problems like:</p>
+<ul>
+<li>Moving <strong>huge files</strong> very fast</li>
+<li>Connecting <strong>multiple high-resolution displays</strong></li>
+<li>Extending <strong>PCIe devices</strong> outside the computer</li>
+<li>Replacing many cables with <strong>one cable</strong></li>
+</ul>
+<p>Think of Thunderbolt as:</p>
+<blockquote>
+<p><strong>“External PCIe + DisplayPort + USB combined”</strong></p>
+</blockquote>
+<h2 id="3-thunderbolt-vs-usb-big-picture">3. Thunderbolt vs USB (Big Picture)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>USB</th>
+<th>Thunderbolt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typical Use</td>
+<td>General peripherals</td>
+<td>High-performance devices</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Up to <strong>40 Gbps (USB4)</strong></td>
+<td><strong>40 Gbps</strong></td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Device-oriented</td>
+<td>PCIe-oriented</td>
+</tr>
+<tr>
+<td>Daisy-chain</td>
+<td>Limited</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>eGPU support</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Low</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table>
+<p>📌 Thunderbolt is <strong>more powerful</strong>, but <strong>not always necessary</strong>.</p>
+<h2 id="4-thunderbolt-uses-usb-c-connector">4. Thunderbolt Uses USB-C Connector</h2>
+<h3 id="important-rule">Important Rule</h3>
+<blockquote>
+<p><strong>All modern Thunderbolt uses the USB-C connector</strong></p>
+</blockquote>
+<p>But:</p>
+<ul>
+<li>Not all USB-C ports support Thunderbolt</li>
+<li>Not all USB-C cables support Thunderbolt</li>
+</ul>
+<p>Look for the <strong>⚡ lightning symbol</strong> near the port.</p>
+<h2 id="5-thunderbolt-versions">5. Thunderbolt Versions</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Max Speed</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thunderbolt 1</td>
+<td>10 Gbps</td>
+<td>Mini DisplayPort</td>
+</tr>
+<tr>
+<td>Thunderbolt 2</td>
+<td>20 Gbps</td>
+<td>Mini DisplayPort</td>
+</tr>
+<tr>
+<td>Thunderbolt 3</td>
+<td>40 Gbps</td>
+<td>USB-C</td>
+</tr>
+<tr>
+<td>Thunderbolt 4</td>
+<td>40 Gbps</td>
+<td>Stricter requirements</td>
+</tr>
+</tbody>
+</table>
+<p>📌 Thunderbolt 4 improves reliability, not raw speed.</p>
+<h2 id="6-what-runs-inside-a-thunderbolt-cable">6. What Runs Inside a Thunderbolt Cable?</h2>
+<p>Thunderbolt tunnels multiple protocols at once:</p>
+<ul>
+<li><strong>PCI Express (PCIe)</strong> → SSDs, eGPUs</li>
+<li><strong>DisplayPort</strong> → monitors</li>
+<li><strong>USB</strong> → backward compatibility</li>
+<li><strong>Power Delivery</strong> → charging</li>
+</ul>
+<p>This is why Thunderbolt docks are so powerful.</p>
+<h2 id="7-daisy-chaining-devices">7. Daisy-Chaining Devices</h2>
+<p>Thunderbolt supports <strong>daisy-chain</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Laptop ── Monitor ── SSD ── Dock
+</span></code></pre></div>
+<ul>
+<li>Up to <strong>6 devices</strong></li>
+<li>One cable to the computer</li>
+<li>Devices share total bandwidth</li>
+</ul>
+<p>USB hubs ≠ Thunderbolt daisy-chain.</p>
+<h2 id="8-thunderbolt-and-displays">8. Thunderbolt and Displays</h2>
+<p>With Thunderbolt you can:</p>
+<ul>
+<li>Drive <strong>multiple 4K monitors</strong></li>
+<li>Or <strong>one 5K / 8K monitor</strong></li>
+<li>Use a single cable for:<ul>
+<li>Video</li>
+<li>Power</li>
+<li>USB devices</li>
+</ul>
+</li>
+</ul>
+<p>This is common on Macs and high-end laptops.</p>
+<h2 id="9-thunderbolt-power-delivery">9. Thunderbolt Power Delivery</h2>
+<p>Thunderbolt supports <strong>USB Power Delivery</strong>:</p>
+<ul>
+<li>Up to <strong>100 W</strong> (and more with USB-PD Extended)</li>
+<li>Can <strong>charge laptops</strong></li>
+<li>One cable for:<ul>
+<li>Charging</li>
+<li>Data</li>
+<li>Display</li>
+</ul>
+</li>
+</ul>
+<p>This enables “one-cable desks”.</p>
+<h2 id="10-thunderbolt-vs-usb4-common-confusion">10. Thunderbolt vs USB4 (Common Confusion)</h2>
+<p>USB4 is based on Thunderbolt 3 technology.</p>
+<h3 id="key-differences">Key differences:</h3>
+<table>
+<thead>
+<tr>
+<th>USB4</th>
+<th>Thunderbolt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optional features</td>
+<td>Mandatory features</td>
+</tr>
+<tr>
+<td>May skip PCIe</td>
+<td>Must support PCIe</td>
+</tr>
+<tr>
+<td>Certification looser</td>
+<td>Strict certification</td>
+</tr>
+</tbody>
+</table>
+<p>📌 <strong>Thunderbolt guarantees performance; USB4 does not.</strong></p>
+<h2 id="11-when-do-you-actually-need-thunderbolt">11. When Do You Actually Need Thunderbolt?</h2>
+<p>You <strong>need Thunderbolt</strong> if you use:</p>
+<ul>
+<li>External NVMe SSDs at full speed</li>
+<li>Multiple high-resolution monitors</li>
+<li>eGPU</li>
+<li>Professional A/V gear</li>
+<li>High-end docking stations</li>
+</ul>
+<p>You <strong>do NOT need Thunderbolt</strong> if you:</p>
+<ul>
+<li>Just charge devices</li>
+<li>Use keyboard/mouse</li>
+<li>Copy small files</li>
+<li>Use basic USB hubs</li>
+</ul>
+<h2 id="12-how-to-check-if-your-computer-supports-thunderbolt">12. How to Check If Your Computer Supports Thunderbolt</h2>
+<ol>
+<li>Look for ⚡ symbol on the port</li>
+<li>Check system specs</li>
+<li>macOS:<ul>
+<li>System Information → Thunderbolt</li>
+</ul>
+</li>
+<li>Linux:<ul>
+<li><code>boltctl list</code></li>
+</ul>
+</li>
+<li>Windows:<ul>
+<li>Thunderbolt Control Center</li>
+</ul>
+</li>
+</ol>
+<h2 id="13-safety-and-security">13. Safety and Security</h2>
+<p>Thunderbolt exposes PCIe → powerful but risky.</p>
+<p>Modern systems add:</p>
+<ul>
+<li>Device authorization</li>
+<li>DMA protection</li>
+<li>IOMMU isolation</li>
+</ul>
+<p>Always trust devices you connect.</p>
+<h2 id="14-summary">14. Summary</h2>
+<ul>
+<li>Thunderbolt = high-speed, multi-protocol interface</li>
+<li>Uses USB-C connector</li>
+<li>Much more powerful than typical USB</li>
+<li>Supports PCIe, displays, power</li>
+<li>Ideal for professional and high-performance setups</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
